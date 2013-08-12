@@ -12,4 +12,4 @@ script:
   py.test --cov-report term-missing --cov-config=tests/.coveragerc -vv --cov sample_data_utils
 
 after_success:
-  - coveralls
+  - coveralls -c tests/.coveragerc
