@@ -15,7 +15,7 @@ def infinite():
 _sequence_counters = {}
 
 
-def sequence(prefix, cache=_sequence_counters):
+def sequence(prefix, cache=None):
     """
     generator that returns an unique string
 
@@ -28,14 +28,14 @@ def sequence(prefix, cache=_sequence_counters):
     'abc-1'
     """
     if cache is None:
-        i = 0
-    elif prefix not in cache:
-        cache[prefix] = infinite()
-        i = next(cache[prefix])
-    else:
-        i = next(cache[prefix])
+        cache = _sequence_counters
+    if cache == -1:
+        cache = {}
 
-    yield "{0}-{1}".format(prefix, i)
+    if prefix not in cache:
+        cache[prefix] = infinite()
+
+    yield "{0}-{1}".format(prefix, next(cache[prefix]))
 
 
 def _get_memoized_value(func, args, kwargs):

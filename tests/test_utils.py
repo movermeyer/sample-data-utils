@@ -27,7 +27,7 @@ def test_unique_fail():
 
 
 def test_sequence():
-    with mock.patch('sample_data_utils.utils._sequence_counters', dict()):
+    with mock.patch('sample_data_utils.utils._sequence_counters', {}):
         assert next(sequence('abc')) == 'abc-0'
         assert next(sequence('abc')) == 'abc-1'
 
@@ -38,8 +38,8 @@ def test_sequence():
         assert next(sequence('abc', {})) == 'abc-0'
         assert next(sequence('abc', {})) == 'abc-0'
 
-        assert next(sequence('abc', None)) == 'abc-0'
-        assert next(sequence('abc', None)) == 'abc-0'
+        assert next(sequence('abc', -1)) == 'abc-0'
+        assert next(sequence('abc', -1)) == 'abc-0'
 
 def test_unique_cache():
     def func():
