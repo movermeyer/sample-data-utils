@@ -2,7 +2,7 @@
 sample-data-utils
 ===================
 
-.. image:: https://secure.travis-ci.org/saxix/sample-data-utils.png?branch=master
+.. image:: https://secure.travis-ci.org/saxix/sample-data-utils.png?branch=develop
    :target: http://travis-ci.org/saxix/sample-data-utils/
 
 .. image:: https://coveralls.io/repos/saxix/sample-data-utils/badge.png?branch=develop
