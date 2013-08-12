@@ -45,7 +45,7 @@ intersphinx_mapping = {
     'netaddr': ('http://pythonhosted.org/netaddr/', None),
     # 'dateutil': ('http://labix.org/python-dateutil/', None),
 }
-next_version = '0.1'
+next_version = '0.2'
 todo_include_todos = True
 
 # Add any paths that contain templates here, relative to this directory.
