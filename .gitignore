@@ -1,0 +1,9 @@
+/.idea
+/.tox
+/build
+/MANIFEST
+docs/build/
+*.log
+*.pot
+*.pyc
+*.egg-info
