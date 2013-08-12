@@ -1,6 +1,8 @@
-Release 0.2 (dev)
-=================
+Release 0.2
+===========
 
+* fixed setup.py
+* fixed coverage
 
 
 Release 0.1
