@@ -1,15 +1,15 @@
 language: python
 python:
-  - "2.6"
   - "2.7"
   - "3.2"
+  - "3.3"
 
 install:
-  - pip install coveralls pytest coverage mock pytest-cov
+  - pip install pytest coverage mock pytest-cov python-coveralls
   - pip install -r requirements.pip
 
 script:
-  py.test --cov-report xml --cov-report html --junitxml=pytest.xml --cov-config=tests/.coveragerc -vv --cov sample_data_utils
+  py.test tests --cov-report term-missing --cov-config=tests/.coveragerc -vv --cov sample_data_utils
 
 after_success:
   - coveralls
