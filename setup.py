@@ -16,13 +16,11 @@ tests_require = ['pytest', 'coverage', 'mock']
 setup(
     name=app.NAME,
     version=app.get_version(),
-    url='http://pypi.wfp.org/pypi/%s/' % app.NAME,
-
-    author='UN World Food Programme',
-    author_email='pasport.competence.centre@wfp.org',
-    license="WFP Property",
-    description='mocca',
-
+    url='https://github.com/saxix/sample-data-utils',
+    author='Stefano Apostolico',
+    author_email='s.apostolico@gmail.com',
+    license="MIT",
+    description='Collections of utilities to create random "human readeable" sample data.',
     packages=find_packages('.'),
     include_package_data=True,
     install_requires=read('requirements.pip'),
@@ -33,9 +31,10 @@ setup(
     },
     platforms=['linux'],
     classifiers=[
-        'Environment :: Web Environment',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.2',
+        'Programming Language :: Python :: 3.3',
         'Intended Audience :: Developers'
     ]
 )

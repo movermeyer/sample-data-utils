@@ -12,10 +12,10 @@ def infinite():
         i += 1
 
 
-sequence_counters = {}
+_sequence_counters = {}
 
 
-def sequence(prefix, cache=sequence_counters):
+def sequence(prefix, cache=None):
     """
     generator that returns an unique string
 
@@ -27,8 +27,14 @@ def sequence(prefix, cache=sequence_counters):
     >>> next(sequence('abc'))
     'abc-1'
     """
+    if cache is None:
+        cache = _sequence_counters
+    if cache == -1:
+        cache = {}
+
     if prefix not in cache:
         cache[prefix] = infinite()
+
     yield "{0}-{1}".format(prefix, next(cache[prefix]))
 
 

@@ -1,4 +1,5 @@
 from random import choice
+import mock
 import pytest
 from sample_data_utils.exception import MaxAttemptException
 from sample_data_utils.utils import unique, sequence
@@ -8,9 +9,9 @@ def test_unique():
     def func():
         values = (1, 2)
         return choice(values)
-
-    f = unique(func)
-    assert f() != f()
+    with mock.patch('sample_data_utils.utils._cache_unique', {}):
+        f = unique(func)
+        assert f() != f()
 
 
 def test_unique_fail():
@@ -26,16 +27,19 @@ def test_unique_fail():
 
 
 def test_sequence():
-    assert next(sequence('abc')) == 'abc-0'
-    assert next(sequence('abc')) == 'abc-1'
+    with mock.patch('sample_data_utils.utils._sequence_counters', {}):
+        assert next(sequence('abc')) == 'abc-0'
+        assert next(sequence('abc')) == 'abc-1'
 
-    c = {}
-    assert next(sequence('abc', c)) == 'abc-0'
-    assert next(sequence('abc', c)) == 'abc-1'
+        c = {}
+        assert next(sequence('abc', c)) == 'abc-0'
+        assert next(sequence('abc', c)) == 'abc-1'
 
-    assert next(sequence('abc', {})) == 'abc-0'
-    assert next(sequence('abc', {})) == 'abc-0'
+        assert next(sequence('abc', {})) == 'abc-0'
+        assert next(sequence('abc', {})) == 'abc-0'
 
+        assert next(sequence('abc', -1)) == 'abc-0'
+        assert next(sequence('abc', -1)) == 'abc-0'
 
 def test_unique_cache():
     def func():

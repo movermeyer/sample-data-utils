@@ -8,11 +8,17 @@ Sample Data Utils
 Overview
 ========
 
-.. image:: https://secure.travis-ci.org/saxix/django-sample_data_utils.png?branch=master
-   :target: http://travis-ci.org/saxix/sample_data_utils/
+.. image:: https://secure.travis-ci.org/saxix/sample-data-utils.png?branch=develop
+   :target: http://travis-ci.org/saxix/sample-data-utils/
 
-.. image:: https://coveralls.io/repos/saxix/sample_data_utils/badge.png
-   :target: https://coveralls.io/r/saxix/sample_data_utils
+.. image:: https://coveralls.io/repos/saxix/sample-data-utils/badge.png?branch=develop
+    :target: https://coveralls.io/r/saxix/sample-data-utils?branch=develop
+
+.. image:: https://pypip.in/v/sample-data-utils/badge.png
+   :target: https://crate.io/packages/sample-data-utils/
+
+.. image:: https://pypip.in/d/sample-data-utils/badge.png
+   :target: https://crate.io/packages/sample-data-utils/
 
 
 Set of utilities to create consistent and "reasonable" test data.
