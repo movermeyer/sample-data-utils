@@ -15,10 +15,10 @@ def test_date():
     assert c == today
 
     c = date(today, next_month)
-    assert today < c < next_year
+    assert today <= c < next_year
 
     c = date(today, next_year)
-    assert today < c < next_year
+    assert today <= c < next_year
 
 
 def test_day():
