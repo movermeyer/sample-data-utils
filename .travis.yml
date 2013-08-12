@@ -2,16 +2,14 @@ language: python
 python:
   - "2.6"
   - "2.7"
-script: nosetests
-env:
-  - DJANGO_VERSION="Django==1.4.3"
-  - DJANGO_VERSION=""Django==1.5"
-install:
-#  - pip install pep8 --use-mirrors
-  - pip install -q $DJANGO_VERSION
-  - python setup.py -q install
-  - pip install -r requirements.txt --use-mirrors
+  - "3.2"
 
-script: django-admin.py test django_sample_data --settings=django_sample_data.tests.settings
-before_script:
-#   - "pep8 --exclude=migrations --ignore=E501,E225 src"
+install:
+  - pip install coveralls pytest coverage mock pytest-cov
+  - pip install -r requirements.pip
+
+script:
+  py.test --cov-report xml --cov-report html --junitxml=pytest.xml --cov-config=tests/.coveragerc -vv --cov sample_data_utils
+
+after_success:
+  - coveralls
