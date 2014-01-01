@@ -12,7 +12,7 @@ def read(*parts):
     here = os.path.abspath(os.path.dirname(__file__))
     return codecs.open(os.path.join(here, *parts), 'r').read()
 
-tests_require = ['pytest', 'coverage', 'mock']
+tests_require = ['pytest', 'coverage', 'mock', 'pytest-cov']
 setup(
     name=app.NAME,
     version=app.get_version(),

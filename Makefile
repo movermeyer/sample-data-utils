@@ -23,6 +23,9 @@ ifdef BROWSE
 	firefox ${BUILDDIR}/coverage/index.html
 endif
 
+ci:
+	@pip install coverage
+	$(MAKE) coverage
 
 clean:
 	rm -fr ${BUILDDIR} dist *.egg-info .coverage coverage.xml pytest.xml .cache MANIFEST
