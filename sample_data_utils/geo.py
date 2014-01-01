@@ -18,11 +18,11 @@ def get_codes():
     >> get_codes()
     ISO	ISO3	ISO-Numeric	fips	Country	Capital	Area(in sq km)	Population	Continent	tld	CurrencyCode	CurrencyName	Phone	Postal Code Format	Postal Code Regex	Languages	geonameid	neighbours	EquivalentFipsCode
     """
-    cache_filename = os.path.join(os.path.dirname(__file__), 'data', 'countryInfo.txt')
+    cache_filename = os.path.join(os.path.dirname(__file__), 'data', 'iso_codes.csv')
     data = []
     for line in open(cache_filename, 'r'):
         if not line.startswith('#'):
-            data.append(line.split('\t'))
+            data.append(line[:-1].split(','))
 
     return data
 
@@ -34,13 +34,15 @@ def continent():
 def country():
     """
     >> country()
-    ['SZ', 'SWZ', '748', 'Swaziland', 'AF', '.sz', 'SZL', 'Lilangeni']
+    ['SZ', 'SWZ', '748', 'WZ', 'Swaziland', 'AF', '.sz', 'SZL']
 
-    :return: (iso2,iso3,isonum,CountryName,Continent,tld,CurrencyCode,CurrencyName
+    :return: (iso2,iso3,isonum,CountryName,Continent,tld,CurrencyCode)
     """
-    codes = get_codes()
-    selection = choice(codes)
-    return selection[0:3] + selection[4:5] + selection[8:12]
+    selection = choice(get_codes())
+    return selection
+
+
+countries = iter(get_codes())
 
 
 def iso2():

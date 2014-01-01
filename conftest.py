@@ -4,7 +4,7 @@ import sys
 
 def pytest_configure(config):
     here = os.path.dirname(__file__)
-    sys.path.insert(0, here)
+    # sys.path.insert(0, here)
 
 
 def runtests(args=None):
