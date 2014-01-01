@@ -2,7 +2,7 @@ import subprocess
 import datetime
 import os
 
-VERSION = __version__ = (0, 3, 0, 'alpha', 0)
+VERSION = __version__ = (0, 3, 0, 'final', 0)
 NAME = 'sample-data-utils'
 __author__ = 'sax'
 
