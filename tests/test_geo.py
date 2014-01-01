@@ -6,18 +6,15 @@ def test_continent():
 
 
 def test_country():
-    print 1111, countries
-    print next(countries)
-    print next(countries)
-    print next(countries)
-
-    # assert len(c) == 8
-    # assert len(c[0]) == 2  # iso2
-    # assert len(c[1]) == 3  # iso3
-    # assert len(c[2]) == 3  # iso_num
-    # assert c[4] in [i[0] for i in CONTINENTS]  # Continent
-    # assert len(c[5]) == 3  # tld
-    # assert len(c[6]) == 3  # CurrencyCode
+    c = next(countries)
+    print c
+    assert len(c) == 7
+    assert len(c[0]) == 2  # iso2
+    assert len(c[1]) == 3  # iso3
+    assert len(c[2]) == 3  # iso_num
+    assert c[4] in [i[0] for i in CONTINENTS]  # Continent
+    assert len(c[5]) == 3  # tld
+    assert len(c[6]) == 3  # CurrencyCode
 
 
 def test_iso2():
