@@ -35,7 +35,8 @@ def sequence(prefix, cache=None):
     if prefix not in cache:
         cache[prefix] = infinite()
 
-    yield "{0}-{1}".format(prefix, next(cache[prefix]))
+    while cache[prefix]:
+        yield "{0}-{1}".format(prefix, next(cache[prefix]))
 
 
 def _get_memoized_value(func, args, kwargs):
