@@ -18,5 +18,9 @@ sample-data-utils
 Collections of utilities to create random "human readeable" sample data.
 
 
+Project links
+-------------
 
-Please see the changelog at http://sample-data-utils.readthedocs.org/en/latest/changes.html
+* Project home page: https://github.com/saxix/sample-data-utils
+* Documentation: http://sample-data-utils.readthedocs.org/en/latest/
+* Download: http://pypi.python.org/pypi/sample-data-utils/
