@@ -21,6 +21,7 @@ setup(
     author_email='s.apostolico@gmail.com',
     license="MIT",
     description='Collections of utilities to create random "human readeable" sample data.',
+    long_description=open('README.rst').read(),
     packages=find_packages('.'),
     include_package_data=True,
     install_requires=read('requirements.pip'),
