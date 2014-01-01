@@ -18,7 +18,7 @@ def test_country():
     c1 = next(countries)
     assert c != c1
 
-    
+
 def test_iso2():
     u = iso2()
     assert len(u) == 2
