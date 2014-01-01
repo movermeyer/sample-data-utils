@@ -7,7 +7,6 @@ def test_continent():
 
 def test_country():
     c = next(countries)
-    print c
     assert len(c) == 7
     assert len(c[0]) == 2  # iso2
     assert len(c[1]) == 3  # iso3
@@ -16,7 +15,10 @@ def test_country():
     assert len(c[5]) == 3  # tld
     assert len(c[6]) == 3  # CurrencyCode
 
+    c1 = next(countries)
+    assert c != c1
 
+    
 def test_iso2():
     u = iso2()
     assert len(u) == 2
