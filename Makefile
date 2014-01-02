@@ -24,7 +24,6 @@ ifdef BROWSE
 endif
 
 ci:
-	@pip install coverage
 	$(MAKE) coverage
 
 clean:
