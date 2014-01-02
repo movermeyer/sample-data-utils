@@ -6,7 +6,7 @@ include LICENSE
 include requirements.pip
 include Makefile
 include setup.py
-recursive-include django_sample_data *.*
-recursive-exclude django_sample_data *.csv
-recursive-exclude django_sample_data *.pyc
+recursive-exclude .tox *.*
+recursive-include sample_data_utils *.*
+recursive-exclude sample_data_utils *.pyc
 
