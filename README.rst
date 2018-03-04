@@ -8,10 +8,10 @@ sample-data-utils
 .. image:: https://coveralls.io/repos/saxix/sample-data-utils/badge.png?branch=master
     :target: https://coveralls.io/r/saxix/sample-data-utils?branch=develop
 
-.. image:: https://pypip.in/v/sample-data-utils/badge.png
+.. image:: https://img.shields.io/pypi/v/sample-data-utils.svg
     :target: https://crate.io/packages/sample-data-utils/
 
-.. image:: https://pypip.in/d/sample-data-utils/badge.png
+.. image:: https://img.shields.io/pypi/dm/sample-data-utils.svg
     :target: https://crate.io/packages/sample-data-utils/
 
 
